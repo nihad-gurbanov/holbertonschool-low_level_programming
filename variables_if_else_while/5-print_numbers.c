@@ -11,8 +11,8 @@ int digit_;
 
 for (digit_ = 0; digit_ < 10; digit_++)
 {
-printf("%d", digit_);
+printf("%i", digit_);
 }
-printf("\n", digit_);
+printf("\n");
 return (0);
 }
