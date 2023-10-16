@@ -9,7 +9,7 @@ int main(void)
 	int digit_;
 
 	for (digit_ = 0; digit_ < 10; digit_++)
-		putchar((digit_ % 10) +'0');
+		putchar((digit_ % 10) + '0');
 
 	putchar('\n');
 
