@@ -1,7 +1,8 @@
 #include "main.h"
-/*
- * main - prints by _putchar
- * Result: Always 0
+/**
+ * main - prints "_putchar" by _putchar
+ *
+ * Return: Always 0
  */
 
 int main(void)
