@@ -8,6 +8,7 @@
 void print_diagonal(int n)
 {
 	int width, space;
+
 	if (n > 0)
 	{
 		for (width = 0; width < n; width++)
@@ -21,7 +22,7 @@ void print_diagonal(int n)
 
 			if (width == (n - 1))
 			continue;
-			
+
 			_putchar('\n');
 		}
 	}
