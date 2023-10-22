@@ -7,6 +7,7 @@
  * with "Fizz" if its reminder from division to 3 is 0
  * with "Buzz" if its reminder from division to 5 is 0
  * with "FizzBuzz" if its reminder from division to 15 is 0
+ * Return: (0)
  */
 
 int main(void)
