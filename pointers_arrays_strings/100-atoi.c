@@ -9,39 +9,36 @@
  * Return: integer
  */
 
-
 int _atoi(char *s)
 {
-	int result = 0;
+	int index = 0;
+	unsigned int result = 0;
 	int sign = 1;
-	int i = 0;
+	int foundDigits = 0;
 
-	while (s[i])
+	while (s[index])
 	{
-		if (s[i] == '-')
+		if (s[index] == '-')
 		{
 			sign *= -1;
 		}
-		else if (s[i] >= '0' && s[i] <= '9')
+
+		while (s[index] >= '0' && s[index] <= '9')
+		{
+			foundDigits = 1;
+			result = (result * 10) + (s[index] - '0');
+			index++;
+		}
+
+		if (foundDigits)
 		{
 			break;
 		}
-		i++;
+
+		index++;
 	}
 
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		int digit = s[i] - '0';
-
-		if ((result > INT_MAX / 10) || (result == INT_MAX /
-					10 && digit > INT_MAX % 10))
-		{
-			return ((sign == 1) ? INT_MAX : INT_MIN);
-		}
-		result = result * 10 + digit;
-		i++;
-	}
-
-	return (result * sign);
+	result *= sign;
+	return (result);
 }
 
