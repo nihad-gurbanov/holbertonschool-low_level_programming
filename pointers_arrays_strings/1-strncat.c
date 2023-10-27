@@ -6,7 +6,7 @@
  *
  * @dest: destination string argument
  * @src: source string argument
- *
+ * @n: n bytes from src to concatenate
  * Return: returns concatenated string
  */
 
