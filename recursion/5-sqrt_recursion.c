@@ -21,7 +21,7 @@ int sqrt_checker(int x, int y)
 	}
 	else
 	{
-		return(sqrt_checker(x, y + 1));
+		return (sqrt_checker(x, y + 1));
 	}
 }
 
