@@ -1,10 +1,14 @@
 #include <string.h>
 #include "main.h"
 
+
 /**
- * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ * is_palindrome_recursive - recursive pa;indrome finction
  *
  * @s: string argument
+ * @start: start index
+ * @end: end index
+ *
  * Return: 1 or 0
  */
 
@@ -20,13 +24,18 @@ int is_palindrome_recursive(char *s, int start, int end)
 	{
 		return (is_palindrome_recursive(s, start + 1, end - 1));
 	}
-	else 
+	else
 	{
 		return (0);
 	}
 }
 
-
+/**
+ * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ *
+ * @s: string argument
+ * Return: 1 or 0
+ */
 
 int is_palindrome(char *s)
 {
