@@ -4,22 +4,27 @@
 
 
 /**
- * print_numbers - prints numbers followed by a new line
+ * print_strings - prints strings followed by a new line
  *
- * @separator: separates numbers
- * @n: count of numbers
+ * @separator: separates strings
+ * @n: count of strings
  *
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list arg_list;
 	unsigned int i;
+	char *ptr;
 
 	va_start(arg_list, n);
 	for (i = 0; i < n; i++)
 	{
-		printf("%d", va_arg(arg_list, int));
+		ptr = va_arg(arg_list, char *);
+		if (ptr == NULL)
+			ptr = "(nil)";
+		printf("%s", ptr);
+
 		if (separator != NULL && i < (n - 1))
 		{
 			printf("%s", separator);
@@ -27,6 +32,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	}
 	printf("\n");
+
 	va_end(arg_list);
 
 }
