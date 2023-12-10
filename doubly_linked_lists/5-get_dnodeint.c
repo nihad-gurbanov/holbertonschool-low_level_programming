@@ -5,8 +5,8 @@
 
 /**
  * get_dnodeint_at_index - returns the nth node of a dlistint_t linked list.
- * @list_head: first node
- * @target_index: index of the desired node
+ * @head: first node
+ * @index: index of the desired node
  * Return: node at the given index
  */
 
