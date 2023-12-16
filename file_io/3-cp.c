@@ -55,11 +55,11 @@ int main(int argc, char **argv)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1 || bytes_written != bytes_read)
-			error_exit(99, "Error: Can't write to", argv[2], -1);
+			error_exit(99, "Error: Can't write to", argv[2], 99);
 	}
 
 	if (bytes_read == -1)
-		error_exit(98, "Error: Can't read from file", argv[1], -1);
+		error_exit(98, "Error: Can't read from file", argv[1], 98);
 
 	if (close(fd_from) == -1)
 		error_exit(100, "Error: Can't close fd", argv[1], fd_from);
