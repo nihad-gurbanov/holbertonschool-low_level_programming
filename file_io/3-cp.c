@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 	}
 
 	if (bytes_read == -1)
-		error_exit(98, "Error: Can't read from file", argv[1], 98);
+		error_exit(98, "Error: Can't read from file", argv[1], -1);
 
 	if (close(fd_from) == -1)
 		error_exit(100, "Error: Can't close fd", argv[1], fd_from);
