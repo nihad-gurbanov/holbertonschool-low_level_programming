@@ -18,7 +18,7 @@ void error_exit(int code, const char *message, const char *filename, int fd)
 	if (fd == 99)
 		dprintf(2, "%s %s\n", message, filename);
 	else if (fd == 98)
-		dprintf(2, "%s %s\n", message);
+		dprintf(2, "%s %s\n", message, filename);
 	else if (fd == 97)
 		dprintf(2, "%s", message);
 	else
