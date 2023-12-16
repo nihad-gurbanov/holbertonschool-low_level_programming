@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1 || bytes_written != bytes_read)
-			error_exit(99, "Error: Can't write to file", argv[2], -1);
+			error_exit(99, "Error: Can't write to", argv[2], -1);
 	}
 
 	if (bytes_read == -1)
