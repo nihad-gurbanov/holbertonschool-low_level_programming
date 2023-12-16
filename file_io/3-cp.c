@@ -22,7 +22,7 @@ void error_exit(int code, const char *message, const char *filename, int fd)
 	else if (fd == 98)
 		dprintf(2, "%s %s\n", message, filename);
 	else if (fd == 988)
-                dprintf(STDERR_FILENO, "%s %s\n", message, filename);
+		dprintf(STDERR_FILENO, "%s %s\n", message, filename);
 	else if (fd == 97)
 		dprintf(2, "%s", message);
 	else
