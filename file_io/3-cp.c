@@ -17,6 +17,8 @@ void error_exit(int code, const char *message, const char *filename, int fd)
 {
 	if (fd == 99)
 		dprintf(2, "%s %s\n", message, filename);
+	else if (fd == 98)
+		dprintf(2, "%s %s\n", message);
 	else if (fd == 97)
 		dprintf(2, "%s", message);
 	else
@@ -43,7 +45,7 @@ int main(int argc, char **argv)
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
-		error_exit(98, "Error: Can't read from file", argv[1], -1);
+		error_exit(98, "Error: Can't read from file", argv[1], 98);
 
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
