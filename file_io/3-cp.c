@@ -15,7 +15,10 @@
  */
 void error_exit(int code, const char *message, int fd)
 {
-	dprintf(2, "%s %d\n", message, fd);
+	if (fd == 9)
+		dprintf(2, "%s", message);
+	else
+		dprintf(2, "%s %d\n", message, fd);
 	exit(code);
 }
 
@@ -34,7 +37,7 @@ int main(int argc, char **argv)
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
-		error_exit(97, "Usage: cp file_from file_to");
+		error_exit(97, "Usage: cp file_from file_to", 9);
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
